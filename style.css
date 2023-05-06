@@ -1,0 +1,28 @@
+::selection {
+	background: #FFFFFF20;
+}
+
+body {
+	background-color: black;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 20px;
+}
+
+button {
+	border: 3px solid white;
+	background-color: black;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 18px;
+	outline: none;
+}
+
+input, select {
+	border: 2px solid white;
+	background-color: black;
+	color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: 18px;
+	outline: none;
+}
