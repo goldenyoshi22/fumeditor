@@ -40,13 +40,18 @@ function combine(a, b) {
 	let count = 0
 
 	for (count = 0; count < 1; count += (1/cl)) {
-		if (d.find(element => element[1] == Math.round(count * cl) / cl) == undefined) {
+	let f = d.filter(element => element[1] == Math.round(count * cl) / cl)
+		if (count <= (cl - 1) / cl) {
+		if (f.length == 0) {
 			e += `0`
 		} else {
-			e += d.find(element => element[1] == Math.round(count * cl) / cl)[0]
+			e += (f[0][0] == "0" ? f[1][0] : f[0][0])
 		}
 		console.log(count)
+		}
 	}
+
+	console.log(`${d}`)
 
 	return e
 }

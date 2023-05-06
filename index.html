@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8">
-<title>Fumeditor - v0.1</title>
+<title>Fumeditor - v0.1.1</title>
 
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
 <center><h2>Hey! Welcome to Fumeditor =)</h2><br>
 <button onclick="start('danMaker')">Dan Maker</button> - <i>A tool to compile multiple charts into your own dan course.<span style="font-size:14px;"><br>Not polished at all for now...</span></i>
 <br><br>
-<button onclick="start('combiner')">Line Combiner</button> - <i style="font-size:18px;">A small tool to help combine two lines into one, good for polyrhythms or songs with complex rhythms. (Does not support anything other than plain notes for now)</i>
+<button onclick="start('combiner')">Line Combiner</button> - <i style="font-size:18px;">A small tool to help combine two lines into one. <span style="font-size:14px;">(Does not support anything other than plain notes for now)</span></i>
 </center>
 </span>
 
@@ -42,9 +42,13 @@ Input two lines:<br><br>
 <input type="text" placeholder="Line 2" id="cl2" style="width:500px;"></input><br><br>
 <button onclick="fullCombiner()">Combine!</button>
 <br><br>
-<span id="cr"></span>
+<span id="cr"></span><br><br><br>
+<ul style="text-align:left;">
+<li>This does not support anything other than notes, like #SCROLL.</li>
+<li>The first line is prioritized more. If there are two different notes at the same time, the one in the first line will appear.</li>
+</ul>
 </center>
 </span>
 
-<span style="position: absolute;  top:1; right:1;  color:#FFFFFF50;">v0.1</span>
+<span style="position: absolute;  top:1; right:1;  color:#FFFFFF50;">v0.1.1</span>
 </body>

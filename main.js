@@ -131,7 +131,16 @@ let dmi = eID("danMakerInput")
 
 function fullCombiner() {
 	let cm = combine(eID("cl1").value, eID("cl2").value)
+	
+	cm = cm.replace(/0/g, "<span style='background-color:#80808080;'>0</span>")
+	cm = cm.replace(/1/g, "<span style='background-color:#DD000080;'>1</span>")
+	cm = cm.replace(/2/g, "<span style='background-color:#00AAAA80;'>2</span>")
+	cm = cm.replace(/3/g, "<span style='background-color:#DD000080;'>3</span>")
+	cm = cm.replace(/4/g, "<span style='background-color:#00AAAA80;'>4</span>")
+	
 	eID("cr").innerHTML = cm
+	eID("cr").style.fontSize = `20px`
+	eID("cr").style.fontSize = `${Math.min((window.innerWidth / eID("cr").offsetWidth) * 95, 100)}%`
 }
 
 start("menu");
