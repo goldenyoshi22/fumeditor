@@ -129,6 +129,61 @@ let dmi = eID("danMakerInput")
 	}
 }
 
+
+function danAdd(addition) {
+	switch (addition) {
+		case "song":
+			danData.songs += 1;
+			let ddcl = danData.charts.length
+			eID("danSL").insertAdjacentHTML('beforeend', `<input id='dds${ddcl}' type='file'></input><br>`)
+			
+			eID(`dds${ddcl}`).addEventListener('change', function() {	
+				let fr=new FileReader();
+				fr.onload=function(){
+					danData.charts[ddcl]=fr.result;
+				}
+				fr.readAsText(this.files[0]);
+			})
+					
+			eID(`dds${danData.charts.length}`).click();
+		break;
+		
+		case "condition":
+			danData.exams += 1;
+			let ddsl = danData.exams;
+			eID("danCL").insertAdjacentHTML('beforeend',`
+					<select id='dct${ddsl}'>
+					<option value="a">Accuracy (OpenTaiko Only)</option>
+					<option value="c">Max Combo</option>
+					<option value="g">Soul Gauge %</option>
+					<option value="h">Hits <i>(Notes Hit + Drumrolls)</i></option>
+					<option value="jb" style="color:#80B">BAD Amount</option>
+					<option value="jg" style="color:#8FF">OK Amount</option>
+					<option value="jp" style="color:#F81">GOOD Amount</option>
+					<option value="r">Drumrolls</option>
+					<option value="s">Score</option>
+					</select>
+					<select id='dcve${ddsl}' style="width:40px;">
+					<option value="m">≥</option>
+					<option value="l">&lt;</option>
+					</select>
+					<input type="text" id="dcvn${ddsl}" style="width:200px;" placeholder="Pass (Space/Multi-Song)"></input>
+					<input type="text" id="dcvgn${ddsl}" style="width:200px;color:#FFFF80;" placeholder="Gold Pass (Space/Multi-Song)"></input>`)
+		break;
+	}
+}
+
+function danPrepare() {
+	for (let i = 0; i < danData.exams; i++) {
+		danData.conditions.push(["type", "value or values"])
+		danData.conditions[i][0] = eID(`dct${i+1}`).value
+		danData.conditions[i][1] = [eID(`dcve${i+1}`).value, [eID(`dcvn${i+1}`).value.split(" "), eID(`dcvgn${i+1}`).value.split(" ")]]
+	}
+	danData.info = [eID("dit").value, eID("dis").value, eID("dil").value]
+	makeDan(true)
+	eID("danhere").innerHTML = makeDan(false).replace(/\n/g, "<br>")
+}
+
 function fullCombiner() {
 	let cm = combine(eID("cl1").value, eID("cl2").value)
 	

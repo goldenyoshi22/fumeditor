@@ -34,7 +34,7 @@ function danMakeSong(chart, type) {
 	if (type == "info") {
 	let info = [
 		mdValue("TITLE", chart),
-		mdValue("SUBTITLE", chart),
+		mdValue("SUBTITLE", chart).replace("--", ""),
 		mdValue("GENRE", chart),
 		mdValue("WAVE", chart),
 		mdValue("SCOREINIT", chart),
@@ -85,7 +85,7 @@ BALLOON:${balloon}
 		}
 	}
 	
-	finalDan += `#START\n`
+	finalDan += `\n#START\n`
 	
 	let songpiece = []
 	

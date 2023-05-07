@@ -26,12 +26,41 @@
 </span>
 
 <span id="danMaker">
-<center>
+
 <h3>Dan Maker</h3>
-<span id="danMakerText">Loading...</span><br><br>
-<input id="danMakerInput" type="text"></input><br>
-<button onclick="danMakerPhase++; danMakerPhaseSet(danMakerPhase);">Continue</button>
-</center>
+
+<table style="width:80%;table-layout:fixed;">
+<tr>
+	<th style="text-align:left;width:50%;">Songs</th>
+	<th style="text-align:left;width:100%;">Conditions</th>
+</tr>
+<tr>
+	<td><span id="danSL"></span></td>
+	<td><span id="danCL"></span></td>
+</tr>
+<tr>
+	<td><button onclick="danAdd('song')">+Song</button></td>
+	<td><button onclick="danAdd('condition')">+Condition</button></td>
+</tr>
+</table>
+<br><br>
+<b>Info</b>
+<table style="width:30%;">
+<tr>
+	<th style="text-align:left;width:100%;">Title</th>
+	<th style="text-align:left;width:80%;">Subtitle</th>
+	<th style="text-align:left;width:30%;">★</th>
+</tr>
+<tr>
+	<td><input id='dit'></input></td>
+	<td><input id='dis'></input></td>
+	<td><input id='dil' type='number' min="0" style="width:50px;"></input></td>
+</tr>
+</table>
+<br>
+<button onclick="danPrepare();">Create my dan!</button>
+<br>
+<span id="danhere"></span>
 </span>
 
 <span id="combiner">
