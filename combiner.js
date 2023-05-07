@@ -41,7 +41,7 @@ function combine(a, b) {
 
 	for (count = 0; count < 1; count += (1/cl)) {
 	let f = d.filter(element => element[1] == Math.round(count * cl) / cl)
-		if (count <= (cl - 1) / cl) {
+		if (count <= (cl - 0.1) / cl) {
 		if (f.length == 0 || f[0][0] == undefined) {
 			e += `0`
 		} else {
